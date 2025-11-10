@@ -1,0 +1,45 @@
+{
+  "name": "Premium Landing Page Stack",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode",
+        "biomejs.biome",
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-playwright.playwright"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.formatOnSave": true,
+        "[astro]": {
+          "editor.defaultFormatter": "astro-build.astro-vscode"
+        }
+      }
+    }
+  },
+
+  "postCreateCommand": "npm install",
+  "postStartCommand": "npm run dev",
+
+  "forwardPorts": [4321],
+
+  "portsAttributes": {
+    "4321": {
+      "label": "Astro Dev Server",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "remoteUser": "node"
+}

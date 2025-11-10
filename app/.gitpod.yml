@@ -1,0 +1,24 @@
+image: gitpod/workspace-node:latest
+
+tasks:
+  - name: Install & Dev Server
+    init: npm install
+    command: npm run dev
+
+ports:
+  - port: 4321
+    onOpen: open-preview
+    visibility: public
+
+vscode:
+  extensions:
+    - astro-build.astro-vscode
+    - biomejs.biome
+    - bradlc.vscode-tailwindcss
+    - ms-playwright.playwright
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
