@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+// Motion 12 (2025 Edition) - formerly Framer Motion
+import { motion } from 'motion/react';
 import { slideUp, fadeIn, staggerContainer } from '@/lib/framer-variants';
 
 interface HeroContentProps {

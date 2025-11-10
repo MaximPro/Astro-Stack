@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+// Motion 12 (2025 Edition) - formerly Framer Motion
+import { motion } from 'motion/react';
 import { useState, type FormEvent } from 'react';
 import { useUIStore } from '@/stores/ui';
 import { fadeInScale } from '@/lib/framer-variants';

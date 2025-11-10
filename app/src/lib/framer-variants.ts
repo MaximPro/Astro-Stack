@@ -1,4 +1,6 @@
-import type { Variants } from 'framer-motion';
+// Motion 12 (formerly Framer Motion) - 2025 Edition
+// New import path: motion/react
+import type { Variants } from 'motion/react';
 
 // Fade in variants
 export const fadeIn: Variants = {
