@@ -1,0 +1,113 @@
+---
+import ContactForm from './ContactForm';
+---
+
+<section class="contact section" id="contact">
+  <div class="container">
+    <div class="contact__wrapper">
+      <ContactForm client:visible />
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    background: linear-gradient(
+      135deg,
+      var(--color-bg) 0%,
+      var(--color-bg-secondary) 100%
+    );
+  }
+
+  .contact__wrapper {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  /* Contact Form Styles */
+  :global(.contact-form) {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-3xl);
+    box-shadow: var(--shadow-lg);
+  }
+
+  :global(.contact-form__header) {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  :global(.contact-form__header h2) {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  :global(.contact-form__header p) {
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+  }
+
+  /* Form Styles */
+  :global(.form) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  :global(.form__row) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  :global(.form__field) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  :global(.form__label) {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  :global(.form__input) {
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background: var(--color-bg);
+    transition: all var(--transition-base);
+  }
+
+  :global(.form__input:focus) {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+  }
+
+  :global(.form__textarea) {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  :global(.form__submit) {
+    width: 100%;
+    margin-top: var(--spacing-md);
+  }
+
+  @media (max-width: 768px) {
+    :global(.contact-form) {
+      padding: var(--spacing-xl);
+    }
+
+    :global(.form__row) {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

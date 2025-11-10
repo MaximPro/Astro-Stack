@@ -1,0 +1,225 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/components/Hero.astro';
+import PricingSection from '@/components/PricingSection.astro';
+import ContactSection from '@/components/ContactSection.astro';
+
+// Pricing tiers configuration
+const pricingTiers = [
+  {
+    name: 'Starter',
+    price: 2997,
+    currency: '€',
+    description: 'Perfekt für kleine Projekte und Einzelunternehmer',
+    features: [
+      'Landing Page Design & Entwicklung',
+      'Mobile-optimiert & responsive',
+      'SEO-Grundoptimierung',
+      'Kontaktformular mit Lead-Tracking',
+      'Hosting-Setup',
+      '2 Revisionsrunden',
+      '30 Tage Support',
+    ],
+    ctaText: 'Jetzt starten',
+  },
+  {
+    name: 'Professional',
+    price: 5997,
+    currency: '€',
+    featured: true,
+    description: 'Für Unternehmen die maximale Conversion wollen',
+    features: [
+      'Alles aus Starter',
+      'Premium-Animationen (Framer Motion + GSAP)',
+      'A/B-Testing Setup',
+      'Analytics & Lead-Scoring',
+      'CMS-Integration (TinaCMS)',
+      'E2E Testing mit Playwright',
+      'Performance-Optimierung (95+ Lighthouse)',
+      'n8n Automation-Setup',
+      '5 Revisionsrunden',
+      '90 Tage Priority Support',
+    ],
+    ctaText: 'Beliebteste Wahl',
+  },
+  {
+    name: 'Enterprise',
+    price: 9997,
+    currency: '€',
+    description: 'Für High-Ticket-Offers und Scale-Businesses',
+    features: [
+      'Alles aus Professional',
+      'Multi-Page Website (bis zu 5 Pages)',
+      'Custom React Components',
+      'Stripe/PayPal Integration',
+      'Calendly/Booking Integration',
+      'Custom CRM-Integration',
+      'Conversion-Funnel-Optimierung',
+      'Split-Testing (Multivariate)',
+      'White-Glove Onboarding',
+      'Unlimitierte Revisionen (30 Tage)',
+      '180 Tage Enterprise Support',
+      'Monatliches Performance Review',
+    ],
+    ctaText: 'Enterprise Anfragen',
+  },
+];
+---
+
+<Layout
+  title="Premium Landing Pages - Built with Astro 5"
+  description="Hochkonvertierende Landing Pages mit modernster Technologie. Astro 5 + React 19 + Premium Animationen für maximale Performance und Conversion."
+>
+  <Hero
+    headline="Landing Pages die verkaufen"
+    subheadline="Hochkonvertierende Websites mit Premium-Technologie. Schnell. Schön. Performant. Gebaut für High-Ticket-Offers."
+    ctaText="Jetzt Projekt starten"
+    ctaLink="#contact"
+  />
+
+  <section class="section features" id="features">
+    <div class="container">
+      <div class="features__header">
+        <h2>Warum unsere Landing Pages?</h2>
+        <p>
+          Wir nutzen die neueste Technologie für maximale Performance und
+          Conversion
+        </p>
+      </div>
+
+      <div class="features__grid">
+        <div class="feature-card">
+          <div class="feature-card__icon">⚡</div>
+          <h3>Blitzschnell</h3>
+          <p>
+            95+ Lighthouse Score garantiert. Astro 5 + React 19 für maximale
+            Performance.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🎨</div>
+          <h3>Premium Design</h3>
+          <p>
+            Cinema-grade Animationen mit Framer Motion & GSAP. Smooth Scrolling
+            mit Lenis.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">📊</div>
+          <h3>Lead Tracking</h3>
+          <p>
+            Automatisches Lead-Scoring & Analytics. Jede Interaktion wird
+            getrackt.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🔄</div>
+          <h3>CMS Integriert</h3>
+          <p>
+            Visual Editing mit TinaCMS. Ändere Headlines ohne Code-Deploy.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🤖</div>
+          <h3>Automation</h3>
+          <p>
+            n8n Integration für automatische Lead-Bearbeitung und Follow-ups.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🎯</div>
+          <h3>Conversion-optimiert</h3>
+          <p>
+            A/B-Testing, Split-Testing und kontinuierliche Optimierung inklusive.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PricingSection
+    title="Transparent Pricing"
+    subtitle="Keine versteckten Kosten. Keine monatlichen Gebühren. Nur ein fairer Preis."
+    tiers={pricingTiers}
+  />
+
+  <ContactSection />
+</Layout>
+
+<style>
+  .features {
+    background: var(--color-bg);
+  }
+
+  .features__header {
+    text-align: center;
+    max-width: 800px;
+    margin-inline: auto;
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .features__header h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .features__header p {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-inline: auto;
+  }
+
+  .features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+  }
+
+  .feature-card {
+    padding: var(--spacing-xl);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+  }
+
+  .feature-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .feature-card__icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .feature-card p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .features__grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+  }
+</style>
+
+<script>
+  import { fadeInOnScroll } from '@/lib/animations';
+
+  document.addEventListener('astro:page-load', () => {
+    // Animate feature cards on scroll
+    fadeInOnScroll('.feature-card', { stagger: 0.1 });
+  });
+</script>

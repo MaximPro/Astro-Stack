@@ -1,0 +1,93 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import '@fontsource-variable/inter';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = 'Premium Landing Page - Built with Astro 5',
+  image = '/og-image.jpg',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+    <!-- View Transitions for SPA-like navigation -->
+    <ViewTransitions />
+  </head>
+  <body>
+    <slot />
+
+    <!-- Initialize Lenis Smooth Scroll -->
+    <script>
+      import { initSmoothScroll } from '@/lib/lenis';
+      import { initGSAPWithLenis } from '@/lib/animations';
+
+      // Initialize on page load
+      document.addEventListener('astro:page-load', () => {
+        initSmoothScroll();
+        initGSAPWithLenis();
+      });
+    </script>
+
+    <!-- Initialize session tracking -->
+    <script>
+      import '@/stores/session'; // Auto-initializes session tracking
+    </script>
+
+    <!-- Analytics placeholder -->
+    <!-- Add your analytics scripts here (Plausible, Umami, etc.) -->
+  </body>
+</html>
+
+<style is:global>
+  /* Smooth page transitions */
+  @view-transition {
+    navigation: auto;
+  }
+
+  /* Customize view transitions */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.3s;
+  }
+
+  /* Custom transition for hero images */
+  ::view-transition-old(hero-image),
+  ::view-transition-new(hero-image) {
+    animation-duration: 0.5s;
+  }
+</style>

@@ -1,0 +1,183 @@
+---
+import PricingCard from './PricingCard';
+
+interface PricingTier {
+  name: string;
+  price: number;
+  currency?: string;
+  period?: string;
+  description: string;
+  features: string[];
+  featured?: boolean;
+  ctaText?: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  tiers: PricingTier[];
+}
+
+const {
+  title = 'Pricing',
+  subtitle = 'Wähle das perfekte Paket für deine Bedürfnisse',
+  tiers,
+} = Astro.props;
+---
+
+<section class="pricing section" id="pricing">
+  <div class="container">
+    <div class="pricing__header">
+      <h2 class="pricing__title">{title}</h2>
+      <p class="pricing__subtitle">{subtitle}</p>
+    </div>
+
+    <div class="pricing__grid">
+      {tiers.map((tier, index) => (
+        <PricingCard client:visible tier={tier} index={index} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing {
+    background: var(--color-bg-secondary);
+  }
+
+  .pricing__header {
+    text-align: center;
+    max-width: 800px;
+    margin-inline: auto;
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .pricing__title {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .pricing__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-inline: auto;
+  }
+
+  .pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  @media (max-width: 768px) {
+    .pricing__grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+  }
+
+  /* Pricing Card Styles */
+  :global(.pricing-card) {
+    background: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition-base);
+  }
+
+  :global(.pricing-card:hover) {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-8px);
+  }
+
+  :global(.pricing-card--featured) {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+  }
+
+  :global(.pricing-card__badge) {
+    position: absolute;
+    top: -12px;
+    right: var(--spacing-lg);
+    background: var(--color-primary);
+    color: white;
+    padding: 0.375rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  :global(.pricing-card__header) {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  :global(.pricing-card__name) {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  :global(.pricing-card__price) {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  :global(.pricing-card__currency) {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+  }
+
+  :global(.pricing-card__amount) {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  :global(.pricing-card__period) {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+  }
+
+  :global(.pricing-card__description) {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+  }
+
+  :global(.pricing-card__features) {
+    list-style: none;
+    flex-grow: 1;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  :global(.pricing-card__feature) {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 0;
+    color: var(--color-text);
+  }
+
+  :global(.pricing-card__check) {
+    flex-shrink: 0;
+    color: var(--color-primary);
+  }
+
+  :global(.pricing-card__cta) {
+    width: 100%;
+  }
+</style>

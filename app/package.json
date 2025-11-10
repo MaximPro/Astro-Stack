@@ -1,0 +1,47 @@
+{
+  "name": "premium-landing-stack",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Premium Landing Page Stack - Astro 5 + React 19 + Modern Animations",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "format": "biome format --write .",
+    "lint": "biome lint --write .",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "db:push": "astro db push",
+    "db:seed": "astro db execute db/seed.ts"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/db": "^0.14.2",
+    "@astrojs/mdx": "^3.1.8",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/sitemap": "^3.2.1",
+    "@fontsource-variable/inter": "^5.1.0",
+    "@gsap/react": "^2.1.1",
+    "@studio-freight/lenis": "^1.0.42",
+    "@tinacms/cli": "^1.6.8",
+    "astro": "^5.0.3",
+    "framer-motion": "^11.11.11",
+    "gsap": "^3.12.5",
+    "nanostores": "^0.11.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tinacms": "^2.2.10",
+    "typescript": "^5.7.2",
+    "zustand": "^5.0.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.9.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1"
+  }
+}
