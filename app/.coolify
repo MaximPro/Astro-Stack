@@ -1,0 +1,52 @@
+# Coolify Configuration
+# This file is read by Coolify for deployment settings
+
+# Build Configuration
+build:
+  command: npm run build
+  directory: .
+  output: dist
+
+# Runtime Configuration
+runtime:
+  node_version: 20
+  port: 4321
+
+# Health Check
+health_check:
+  enabled: true
+  path: /
+  interval: 30s
+  timeout: 10s
+  retries: 3
+
+# Environment Variables (set in Coolify UI)
+# PUBLIC_CONVEX_URL=
+# PUBLIC_CLERK_PUBLISHABLE_KEY=
+# CLERK_SECRET_KEY=
+# PUBLIC_SITE_URL=
+
+# Deployment Strategy
+deployment:
+  type: static
+  restart_policy: unless-stopped
+
+# Custom Domain
+# Set in Coolify UI: Settings > Domains
+
+# SSL/TLS
+# Automatic Let's Encrypt SSL (managed by Coolify)
+
+# Backup Configuration
+backup:
+  enabled: false
+  # No persistent data for static site
+
+# Resource Limits
+resources:
+  memory: 512M
+  cpu: 0.5
+
+# Logs
+logs:
+  retention_days: 7

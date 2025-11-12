@@ -1,0 +1,82 @@
+# Cloudflare Pages Configuration
+# Deploy with: npm run build && wrangler pages deploy dist/
+
+name = "astro-landing"
+compatibility_date = "2025-01-10"
+
+[build]
+command = "npm run build"
+cwd = "."
+watch_dir = "src"
+
+[build.upload]
+format = "directory"
+dir = "dist"
+
+# Environment Variables
+[env.production]
+NODE_VERSION = "20"
+
+# Pages Configuration
+pages_build_output_dir = "dist"
+
+# Custom Headers
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+for = "/assets/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.css"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.js"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirects
+[[redirects]]
+from = "/old-path/*"
+to = "/new-path/:splat"
+status = 301
+
+# SPA fallback for client-side routing (if needed)
+[[redirects]]
+from = "/*"
+to = "/404.html"
+status = 404
+
+# Performance & Caching
+[site]
+bucket = "dist"
+
+# Workers AI integration (optional)
+# [ai]
+# binding = "AI"
+
+# KV Storage (optional for cache)
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "your-kv-namespace-id"
+
+# R2 Storage (optional for images/assets)
+# [[r2_buckets]]
+# binding = "ASSETS"
+# bucket_name = "your-bucket-name"
+
+# D1 Database (optional)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "astro-db"
+# database_id = "your-db-id"

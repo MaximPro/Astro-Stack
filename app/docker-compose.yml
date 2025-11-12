@@ -1,0 +1,58 @@
+# Coolify & Self-Hosted Docker Configuration
+# Deploy with: docker-compose up -d
+
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: astro-landing
+    restart: unless-stopped
+    ports:
+      - "4321:4321"
+    environment:
+      - NODE_ENV=production
+      - NODE_VERSION=20
+      # Add your environment variables here
+      # - PUBLIC_CONVEX_URL=${PUBLIC_CONVEX_URL}
+      # - PUBLIC_CLERK_PUBLISHABLE_KEY=${PUBLIC_CLERK_PUBLISHABLE_KEY}
+    volumes:
+      # Mount for development (comment out in production)
+      # - .:/app
+      # - /app/node_modules
+      # Production: serve static files
+      - ./dist:/app/dist:ro
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4321"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Nginx reverse proxy
+  nginx:
+    image: nginx:alpine
+    container_name: astro-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - ./dist:/usr/share/nginx/html:ro
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  node_modules:
