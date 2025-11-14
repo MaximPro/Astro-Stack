@@ -1,0 +1,154 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/20">
+      <!-- Background gradient orbs -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-1/2 -left-1/2 w-full h-full bg-primary/10 rounded-full blur-3xl" />
+        <div class="absolute -bottom-1/2 -right-1/2 w-full h-full bg-accent/10 rounded-full blur-3xl" />
+      </div>
+
+      <div class="container mx-auto px-4 py-20 relative z-10">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+          <!-- Badge -->
+          <div class="flex justify-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm">
+              <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span>Astro 5 + BMAD-METHOD + Claude Code</span>
+            </div>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-fade-in">
+            Build Websites
+            <br />
+            <span class="gradient-text">10x Faster</span>
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto animate-slide-up">
+            AI-driven development with BMAD-METHOD + Claude Code. From idea to production in minutes.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+            <a
+              href="#quick-start"
+              class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Get Started
+              <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            <a
+              href="https://github.com/bmad-code-org/BMAD-METHOD"
+              target="_blank"
+              class="inline-flex items-center justify-center px-8 py-4 rounded-lg border-2 border-border font-semibold hover:bg-accent transition-colors"
+            >
+              Learn About BMAD
+            </a>
+          </div>
+
+          <!-- Features Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-16 border-t border-border">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-primary mb-2">⚡</div>
+              <h3 class="font-semibold mb-1">Lightning Fast</h3>
+              <p class="text-sm text-muted-foreground">Astro 5 + React 19 + Tailwind 4</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-primary mb-2">🤖</div>
+              <h3 class="font-semibold mb-1">AI-Powered</h3>
+              <p class="text-sm text-muted-foreground">BMAD-METHOD workflows</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-primary mb-2">🚀</div>
+              <h3 class="font-semibold mb-1">Production Ready</h3>
+              <p class="text-sm text-muted-foreground">Deploy to Cloudflare/Netlify</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section id="quick-start" class="py-20 bg-background">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Quick Start</h2>
+
+          <div class="space-y-6">
+            <div class="p-6 rounded-xl border border-border bg-card">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                  1
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-semibold mb-2">Install Dependencies</h3>
+                  <pre class="bg-secondary p-4 rounded-lg overflow-x-auto"><code>npm install</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl border border-border bg-card">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                  2
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-semibold mb-2">Initialize BMAD-METHOD</h3>
+                  <pre class="bg-secondary p-4 rounded-lg overflow-x-auto"><code>npm run bmad:install</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl border border-border bg-card">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                  3
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-semibold mb-2">Start Development</h3>
+                  <pre class="bg-secondary p-4 rounded-lg overflow-x-auto"><code>npm run dev</code></pre>
+                  <p class="text-sm text-muted-foreground mt-2">Opens at http://localhost:4321</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl border border-border bg-card">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                  4
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-semibold mb-2">Use BMAD in Claude Code</h3>
+                  <p class="text-sm text-muted-foreground mb-2">Load the BMad Master agent and run:</p>
+                  <pre class="bg-secondary p-4 rounded-lg overflow-x-auto"><code>*/workflow-init</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-border">
+      <div class="container mx-auto px-4 text-center text-sm text-muted-foreground">
+        <p>Built with Astro 5, BMAD-METHOD, and ❤️ for rapid development</p>
+        <p class="mt-2">
+          <a href="https://github.com/bmad-code-org/BMAD-METHOD" target="_blank" class="hover:text-foreground transition-colors">
+            Learn more about BMAD-METHOD
+          </a>
+        </p>
+      </div>
+    </footer>
+  </main>
+</BaseLayout>
