@@ -1,0 +1,43 @@
+{
+  "mcpServers": {
+    "astro-docs": {
+      "command": "npx",
+      "args": ["-y", "@dreyfus92/astro-docs-mcp"],
+      "description": "Live Astro 5 documentation access (bypasses knowledge cutoff)"
+    },
+    "web-search": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "env": {
+        "BRAVE_API_KEY": "optional-add-your-key"
+      },
+      "description": "Web search for latest docs, npm packages, tutorials"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
+      "description": "Access project files and directories"
+    }
+  },
+  "recommendations": {
+    "note": "MCP servers provide Claude Code with real-time access to:",
+    "astro-docs": "Latest Astro documentation (always up-to-date)",
+    "web-search": "Search for current npm versions, tutorials, Stack Overflow",
+    "filesystem": "Read/write project files directly",
+    "usage": "MCP servers auto-load when opening this project in Claude Code"
+  },
+  "setup": {
+    "astro-docs": {
+      "install": "Automatic (npx on first use)",
+      "config": "None needed"
+    },
+    "web-search": {
+      "install": "Automatic (npx on first use)",
+      "config": "Optional: Add BRAVE_API_KEY to env for more quota"
+    },
+    "filesystem": {
+      "install": "Automatic (npx on first use)",
+      "config": "Scoped to project directory (.)"
+    }
+  }
+}

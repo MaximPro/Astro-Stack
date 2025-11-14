@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: BMAD-METHOD Documentation
+    url: https://github.com/bmad-code-org/BMAD-METHOD
+    about: Official BMAD-METHOD documentation and resources
+  - name: Astro Documentation
+    url: https://docs.astro.build
+    about: Official Astro documentation
+  - name: Discord Community
+    url: https://discord.gg/gk8jAdXWmj
+    about: Join the BMAD community on Discord

@@ -1,0 +1,55 @@
+name: BMAD Workflow Question
+description: Ask about BMAD-METHOD workflows and usage
+title: "[BMAD]: "
+labels: ["question", "bmad"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask questions about using BMAD-METHOD with this stack!
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know about BMAD workflows?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Related Agent
+      description: Which BMAD agent is this about?
+      options:
+        - BMad Master
+        - PM (Product Manager)
+        - Architect
+        - Developer
+        - UX Designer
+        - Tech Writer
+        - Test Architect
+        - DevOps
+        - Security
+        - Performance
+        - Other
+        - Not agent-specific
+
+  - type: dropdown
+    id: workflow
+    attributes:
+      label: Workflow Type
+      description: Which workflow are you using?
+      options:
+        - Quick Flow
+        - BMad Method
+        - Enterprise
+        - Party Mode
+        - Custom Workflow
+        - Not sure
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any additional information that might help

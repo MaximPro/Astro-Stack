@@ -1,6 +1,6 @@
 # 🚀 Astro BMAD Stack
 
-**Production-Ready Astro Stack mit BMAD-METHOD Integration für AI-gestütztes Rapid Web Development**
+**bolt.new-Style AI-Powered Website Builder - Build Premium Sites in Minutes**
 
 [![Astro](https://img.shields.io/badge/Astro-5.15.3-FF5D01?logo=astro)](https://astro.build)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react)](https://react.dev)
@@ -11,23 +11,104 @@
 
 ---
 
-## 🎯 Was ist das?
+## ⚡ One-Click Website Building (bolt.new-Style)
 
-Ein **optimiertes Astro Development Environment**, das die Power von:
-- **Astro 5** (modernster Static Site Generator)
-- **BMAD-METHOD** (AI-driven Agile Framework)
-- **Claude Code** (Official Anthropic CLI)
+**Download → Open in Claude Code → Type `/landing` → Done!**
 
-...kombiniert für **10x schnellere Website-Entwicklung**.
+```bash
+# Clone and open in Claude Code
+git clone <your-repo> && code astro-bmad-stack
 
-### Warum dieser Stack?
+# In Claude Code chat:
+/landing    # → Complete landing page in 2 min
+/saas       # → SaaS site with pricing in 3 min
+/portfolio  # → Portfolio website in 2 min
+/blog       # → Blog with CMS in 4 min
+```
 
-✅ **Von Idee zu Production in Minuten** - Nicht Tagen
-✅ **AI-gestützte Workflows** - BMAD-METHOD Agents & Workflows
-✅ **Neueste Tech** - Astro 5, React 19, Tailwind 4
-✅ **Claude Code optimiert** - Perfect IDE integration
-✅ **Zero Config** - Läuft sofort nach Setup
-✅ **Production Ready** - Deploy zu Cloudflare/Netlify/Vercel
+**Like bolt.new and lovable.dev, but with:**
+- ✅ Full code ownership
+- ✅ No vendor lock-in
+- ✅ Latest Astro 5 + React 19
+- ✅ Production-ready code
+- ✅ Deploy anywhere (Cloudflare/Netlify/Vercel)
+
+---
+
+## 🎯 What Makes This Special?
+
+**3 Power Tools Combined:**
+
+### 1. **Latest Tech Stack** (Astro 5 + React 19 + Tailwind 4)
+- Cutting-edge features
+- Best performance
+- Future-proof
+
+### 2. **BMAD-METHOD** (AI-Driven Development)
+- 19+ specialized agents
+- 50+ guided workflows
+- Scale-adaptive planning
+
+### 3. **Claude Code Integration** (Seamless AI Development)
+- Auto-setup on project open
+- One-click templates via slash commands
+- MCP servers for latest docs
+- SessionStart welcome guide
+
+**Result:** Build professional websites **10x faster** than traditional development.
+
+---
+
+## 🚀 Getting Started (Choose Your Style)
+
+### 🎨 Option 1: One-Click Templates (bolt.new-Style)
+
+**Fastest way to build:**
+
+1. **Clone & Open:**
+   ```bash
+   git clone <your-repo>
+   cd astro-bmad-stack
+   code .  # Opens in Claude Code
+   ```
+
+2. **Auto-Setup Runs:**
+   - SessionStart hook welcomes you
+   - Shows available commands
+   - Checks installation status
+
+3. **Build Instantly:**
+   ```
+   /landing     → Landing page (2 min)
+   /saas        → SaaS landing (3 min)
+   /portfolio   → Portfolio site (2 min)
+   /blog        → Blog with CMS (4 min)
+   /setup-all   → First-time setup
+   ```
+
+### 🤖 Option 2: BMAD Workflow (Guided AI Development)
+
+**For custom/complex sites:**
+
+```bash
+npm run setup
+
+# In Claude Code:
+@bmad/agents/bmad-master.agent.yaml
+*/workflow-init
+
+# Choose:
+- Quick Flow (features/fixes)
+- BMad Method (full websites)
+- Party Mode (multi-agent)
+```
+
+### 💻 Option 3: Traditional Development
+
+```bash
+npm install
+npm run dev  # http://localhost:4321
+```
 
 ---
 
@@ -259,6 +340,44 @@ vercel
 ```
 
 **Full deployment guide:** See `.claude/README.md` for detailed instructions.
+
+---
+
+## 🎨 Available Slash Commands
+
+### One-Click Templates
+
+| Command | Creates | Time | Sections |
+|---------|---------|------|----------|
+| `/landing` | Landing Page | 2 min | Hero, Features, Benefits, Social Proof, CTA, Footer |
+| `/saas` | SaaS Site | 3 min | Hero, Features, Pricing (3 tiers), FAQ, Testimonials, CTA |
+| `/portfolio` | Portfolio | 2 min | Hero, About, Projects Grid, Services, Testimonials, Contact |
+| `/blog` | Blog | 4 min | Homepage, Post Pages, Categories, Tags, Search, Author Pages |
+| `/ecommerce` | E-Commerce | 5 min | Coming soon |
+
+### Quick Actions
+
+| Command | Purpose |
+|---------|---------|
+| `/setup-all` | Complete first-time setup (deps + BMAD + dev server) |
+| `/component` | Create new React component |
+| `/page` | Create new Astro page |
+| `/deploy-cf` | Deploy to Cloudflare Pages |
+| `/deploy-netlify` | Deploy to Netlify |
+
+### BMAD Workflows
+
+| Command | Purpose |
+|---------|---------|
+| `/bmad-quick` | Quick Flow (small features/fixes) |
+| `/bmad-full` | Full BMad Method (complete sites) |
+| `/bmad-party` | Party Mode (multi-agent collaboration) |
+
+**How to use:**
+1. Open project in Claude Code
+2. Type slash command in chat
+3. Answer customization prompts
+4. Website generated in minutes!
 
 ---
 
