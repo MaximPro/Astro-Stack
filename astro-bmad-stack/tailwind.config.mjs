@@ -1,6 +1,8 @@
-// Tailwind CSS 4.1.16 Configuration
+// Tailwind CSS 4.0 Configuration (Released Jan 22, 2025)
+// New in v4: Auto-detects content, 5x faster builds, @import syntax
 /** @type {import('tailwindcss').Config} */
 export default {
+  // Content auto-detected in Tailwind 4, but can specify for optimization
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class',
   theme: {

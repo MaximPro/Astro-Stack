@@ -2,9 +2,9 @@
 
 **bolt.new-Style AI-Powered Website Builder - Build Premium Sites in Minutes**
 
-[![Astro](https://img.shields.io/badge/Astro-5.15.3-FF5D01?logo=astro)](https://astro.build)
-[![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react)](https://react.dev)
-[![Tailwind](https://img.shields.io/badge/Tailwind-4.1.16-38B2AC?logo=tailwind-css)](https://tailwindcss.com)
+[![Astro](https://img.shields.io/badge/Astro-5.15.6-FF5D01?logo=astro)](https://astro.build)
+[![React](https://img.shields.io/badge/React-19.0-61DAFB?logo=react)](https://react.dev)
+[![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38B2AC?logo=tailwind-css)](https://tailwindcss.com)
 [![BMAD](https://img.shields.io/badge/BMAD--METHOD-6.0--alpha-orange)](https://github.com/bmad-code-org/BMAD-METHOD)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Node](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)](https://nodejs.org)
@@ -39,7 +39,11 @@ git clone <your-repo> && code astro-bmad-stack
 
 **3 Power Tools Combined:**
 
-### 1. **Latest Tech Stack** (Astro 5 + React 19 + Tailwind 4)
+### 1. **Latest Tech Stack** (January 2025 Release)
+- **Astro 5.15.6** - Latest with Server Islands + Content Layer API
+- **React 19.0** - Stable release (Dec 2024) with RSC + Actions
+- **Tailwind 4.0** - JUST RELEASED (Jan 22, 2025)! 5x faster builds!
+- **Motion 12.23** - Rebranded from Framer Motion, 20% smaller
 - Cutting-edge features
 - Best performance
 - Future-proof

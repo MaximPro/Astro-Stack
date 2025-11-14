@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind CSS 4.0 - New Import Syntax (Jan 2025) */
+@import "tailwindcss";
 
 @layer base {
   :root {
